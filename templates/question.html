@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {%block title %} Question {% endblock %} {% block
+content%}
+<div class="form">
+  <form action="/answer" method="post get">
+    <div>
+      <h3>{{question}}</h3>
+    </div>
+
+    {% for choice in choices %}
+    <div class="choices">
+      <label for="{{choice}}">{{choice}}</label>
+      <input type="checkbox" name="{{choice}}" class="checkbox" />
+    </div>
+
+    {% endfor%}
+
+    <button>Next</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html'%} {%block title %} Question {% endblock %} {% block
+content%}
+<div class="home">
+  <div>
+    <h1>Welcome {{surveys.title}}</h1>
+    <h2>{{surveys.instructions }}</h2>
+  </div>
+</div>
+<div class="home">
+  <a href="/questions/0">Start the survey</a>
+</div>
+{% endblock %}
