@@ -1,7 +1,7 @@
 const flash = $(".error");
 
 setTimeout(() => {
-  flash.hide(500);
+  flash.slideUp(500);
 }, 4000);
 
 const checkbox = $(".checkbox");
