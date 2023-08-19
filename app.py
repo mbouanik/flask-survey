@@ -16,6 +16,13 @@ def home():
     )
 
 
+@app.route("/reset")
+def reset():
+    global responses
+    responses = []
+    return redirect("/")
+
+
 @app.route("/questions/<int:q>", methods=["GET"])
 def questions(q):
     if len(surveys["satisfaction"].questions) == len(responses):
@@ -31,9 +38,13 @@ def questions(q):
 @app.route("/answer", methods=["GET", "POST"])
 def answer():
     global responses
+    if not request.args:
+        flash("Please Select one Answer", "error")
+        return redirect(f"/questions/{len(responses)}")
     if len(surveys["satisfaction"].questions) == len(responses):
         return redirect("/")
-
+    if request.method == "POST":
+        print("HELLO")
     responses += list(request.args)
 
     return redirect(f"/questions/{len(responses)}")

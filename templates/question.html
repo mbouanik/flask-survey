@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {%block title %} Question {% endblock %} {% block
 content%}
 <div class="form">
-  <form action="/answer" method="post get">
+  <form action="/answer" method="get post">
     <div>
       <h3>{{question}}</h3>
     </div>
@@ -13,7 +13,6 @@ content%}
     </div>
 
     {% endfor%}
-
     <button>Next</button>
   </form>
 </div>
