@@ -43,8 +43,6 @@ def answer():
         return redirect(f"/questions/{len(responses)}")
     if len(surveys["satisfaction"].questions) == len(responses):
         return redirect("/")
-    if request.method == "POST":
-        print("HELLO")
     responses += list(request.args)
 
     return redirect(f"/questions/{len(responses)}")
